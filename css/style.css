@@ -1,0 +1,117 @@
+*{ margin:0px; padding:0px;}
+.fl{ float:left}
+.fr{ float:right}
+.clear{ clear:both}
+
+body{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#666666; background:#d4d2d2 url(../images/body.jpg) 0 0 repeat-x}
+.wrapper{ width:960px; margin:auto}
+.header{ }
+.container_main{}
+.container_top{ padding:0px 8px 0px 10px}
+.container_top h2{ padding:22px 20px 12px 20px; text-align:center; color:#041a31; margin:0px; font-size:18px; line-height:normal;}
+.container_top h2 strong{ color:#fefeff}
+.container_mdl{ padding:0px}
+
+
+.content{ }
+.tab { margin:0px; padding:0px 0 0px 0px;}
+.tab li { float:left; display:block;  }
+.tab li a{  font-size:12px; color:#fff; text-decoration:none; line-height:36px; display:block; width:140px; text-align:center; background:#1762b0 url(../images/divider.jpg) right top no-repeat; padding-right:10px }
+.tab li a.act{  font-weight:bold; background:#0b3e74 url(../images/act.jpg) right top no-repeat}
+.tab li a.act2{  font-weight:bold; background:#0b3e74}
+
+.tab li a.none{ background:#1762b0; background-image:none}
+
+.course_details{ width:450px; float:left; margin-right:22px; }
+.details{ background:#ffffff; padding:20px; border-top:8px solid #0b3e74; margin-right:0px; min-height:200px}
+.details h3{ font-size:16px; font-weight:bold; color:#084c6a}
+.details h4{ font-size:16px; font-weight:bold; color:#68a72b}
+.details ul{ margin:0px; padding:0px;}
+.details ul li{ font-size:14px; color:#656565; list-style-type:none; padding:5px 5px 5px 15px; background:url(../images/arrow_small.jpg) 0 7px no-repeat;  line-height:normal; border-bottom:1px solid #ccc;}
+.details ul li a{}
+
+.inquiry_form{ background:#ffffff; border:3px solid #1762b0;  float:right; width:190px; padding:10px 20px; min-height:250px}
+.inquiry_form h2{  color:#084c6a; font-size:14px; font-weight:normal; line-height:normal; margin:0px; padding-bottom:20px ;} 
+.inquiry_form p{  padding:0px 0px 7px 0px; margin:0px}
+.inquiry_form .input{color:#000!important; padding:2px 4px 2px 10px; background:#f2f2f2; border:1px solid #becac9
+}
+.inquiry_form .list{color:#a7a2ac!important; border:1px solid #a2bbbb; padding:2px 4px 2px 10px; background:#f2f2f2
+}
+/*.inquiry_form .name{background:#f2f2f2 url(../images/name.jpg) 0 0 no-repeat}
+.inquiry_form .email{background:#f2f2f2 url(../images/email.jpg) 0 0 no-repeat}
+.inquiry_form .date{background:#f2f2f2 url(../images/date.jpg) 0 0 no-repeat}
+.inquiry_form .phone{background:#f2f2f2 url(../images/phone.jpg) 0 0 no-repeat}
+.inquiry_form .course{background:#f2f2f2 url(../images/center.jpg) 0 0 no-repeat}
+.inquiry_form .time{background:#f2f2f2 url(../images/time.jpg) 0 0 no-repeat}
+.inquiry_form .list{width:175px;  color:#a7a2ac!important; border:1px solid #a2bbbb; padding:4px 4px 4px 40px; background:#f2f2f2 url(../images/name.jpg) 0 0 no-repeat}*/
+.inquiry_form .button{ background:#1762b0; height:34px; border:1px solid #adced7; color:#fff; font-size:11px; width:185px; text-align:center; line-height:34px; cursor:pointer; text-transform:uppercase}
+
+#myCarousel ul li{ display:block; float:left}
+#myCarousel .carousel-inner{ margin:20px 40px;}
+#myCarousel .carousel-inner ul { margin:0px; padding:0px;}
+#myCarousel .carousel-inner ul li{ width:101px; height:65px; overflow:hidden; margin-right:35px}
+#myCarousel .carousel-control{ width:16px; height:26px; text-indent:-10000px; }
+#myCarousel .left{ background:url(../images/arrow_left.jpg) 0 0 no-repeat}
+#myCarousel .right{ background:url(../images/arrow_right.jpg) 0 0 no-repeat}
+
+.modal{ height:600px;}
+.modal-body{ min-height:460px; text-align:center; line-height:460px;}
+.modal-body img{ line-height:460px}
+
+.details ul ul{ font-size:12px; margin:0px; padding:0px 0px 0px 10px;}
+.details ul ul li{font-size:16px; font-weight:bold; list-style-type:circle; background:none; list-style-position:inside; padding:10px 0 0 0!important; margin:0px; line-height:18px;  }
+.heading_bold{ font-size:16px; font-weight:bold; color:#b60f0f}
+
+
+.copy{ color:#fff; font-size:13px }
+
+
+.form_scholarship{ overflow:hidden; padding:20px 0 0 0}
+.form_scholarship .col{ float:left; width:202px}
+.form_scholarship .col2{ float:left; width:250px}
+.form_scholarship p{ clear:left; padding-bottom:10px}
+.form_scholarship .col p label{ float:left; width:50px; line-height:34px}
+.form_scholarship .col p .input{width:130px; background:#fff!important;  color:#000000!important; border:1px solid #d3dfdf; padding:5px; height:24px;}
+
+.form_scholarship .col2 p label{ float:left; width:94px; line-height:34px}
+.form_scholarship .col2 p .input{width:130px; background:#fff!important;  color:#000000!important; border:1px solid #d3dfdf; padding:5px; height:24px;}
+.form_scholarship .col2 p .list{width:140px; background:#fff!important;  color:#000000!important; border:1px solid #d3dfdf; padding:7px 5px; }
+.form_scholarship .col2 p .btn{ background:url(../images/btn.jpg) 0 0 repeat-x; height:34px; border:1px solid #adced7; color:#fff; font-size:11px; width:140px; text-align:center; line-height:34px; cursor:pointer}
+
+
+.inquiry_form{}
+.form_scholarship ul{}
+
+
+/*.header,
+.container_top,
+.banner,
+.tab,
+.container_btm{ display:none}*/
+
+.copy{ width:960px; margin:auto;}
+.container_btm{ background:url(../images/container_btm.png) bottom left repeat-x; height:50px; line-height:50px; margin-top:20px}
+
+.about{ width:230px; float:left; background:#ffffff; }
+.about h3{ background:#1762b0; height:44px; line-height:44px; padding-left:20px; color:#fff; font-weight:normal; font-size:16px;}
+.about p{ color:#1762b0; font-size:16px; padding-bottom:10px;}
+.about .inner{ padding:15px;}
+.about .h4{ font-size:18px; color:#1762b0; font-weight:bold}
+.about a.link{ background:#1762b0; color:#fff; text-align:center; padding:5px; display:block; text-decoration:none; font-size:14px; margin-top:58px}
+.details p{ font-size:14px; color:#0b3e74; line-height:25px}
+.details h2{ font-size:16px; font-weight:bold; color:#084c6a; padding-bottom:7px;}
+
+.course_details .details{ min-height:245px;}
+.about{ min-height:325px;}
+.inquiry_form{ min-height:295px;}
+
+.banner{ min-width:960px; text-align:center; margin-bottom:30px; overflow:hidden; background:url(../images/banner.jpg) center top no-repeat; height:395px;}
+
+
+
+.contactform2{}
+.contactform2 p{ clear:left; padding-bottom:0px;}
+.contactform2 p label{ float:left; width:80px; padding:5px;}
+.contactform2 p .input{ width:250px; padding:3px; border:1px solid #ccc; margin-bottom:10px;  color:#666; font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+.contactform2 p .area{ width:250px; padding:3px; border:1px solid #ccc; margin-bottom:10px; height:50px; color:#666; font-size:12px; font-family:Arial, Helvetica, sans-serif;}
+.contactform2 p .submit{  background:#1762b0; height:34px; border:1px solid #adced7; color:#fff; font-size:11px; width:185px; text-align:center; line-height:34px; cursor:pointer; text-transform:uppercase; float:right}

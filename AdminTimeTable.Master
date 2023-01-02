@@ -1,0 +1,624 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminTimeTable.Master.cs"
+    Inherits="AdminTimeTable" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="UserControl/ucleftsideAdminMenu.ascx" TagName="ucleftsideAdminMenu"
+    TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <title>MT Educare - Scheduling Engine</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style type="text/css">
+        @media print
+        {
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
+        }
+    </style>
+    <!-- basic styles -->
+    <%--  <script src="assets/js/rightClick.js" type="text/javascript"></script>--%>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <!--[if IE 7]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="assets/css/jquery-ui-1.10.2.custom.min.css" />
+    <link rel="stylesheet" href="assets/css/chosen.css" />
+    <link rel="stylesheet" href="assets/css/datepicker.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-timepicker.css" />
+    <link rel="stylesheet" href="assets/css/daterangepicker.css" />
+    <link rel="stylesheet" href="assets/css/colorpicker.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <!--[if lt IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+    <!-- basic scripts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='assets/js/jquery-1.9.1.min.js'>\x3C/script>");
+		</script>
+    
+    <!-- page specific plugin scripts -->
+    <!--[if lt IE 9]>
+		<script type="text/javascript" src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+
+        <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.10.2.custom.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/fuelux.spinner.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="assets/js/date.js"></script>
+    <script type="text/javascript" src="assets/js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-colorpicker.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.autosize-min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="assets/js/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="assets/js/fuelux.wizard.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+    
+
+
+
+    <!-- ace scripts -->
+    <script src="assets/js/ace-elements.min.js"></script>
+    <script src="assets/js/ace.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<!--Put this in body to disable cut copy paste  (oncopy="return false" oncut="return false" onpaste="return false")-->
+<body class="skin-1" oncopy="return false" oncut="return false" style="zoom:88%">
+    <form id="form1" runat="server" class="form-horizontal">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div class="navbar navbar-inverse" >
+        <div class="navbar-inner" style="background-color:#E25B0A">
+            <div class="container-fluid">
+                <a class="brand" href="#"><small>
+                
+                <img alt="MT Educare Ltd" class="msg-photo" src="Images/logo.jpg" /> MT Educare - Scheduling
+                    Engine</small> </a>
+               
+               
+               
+                <ul class="nav ace-nav pull-right">
+					<li class="grey">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-tasks"></i>
+							<span class="badge"><asp:Label runat="server" ID="lblHeader_Company_Count">0</asp:Label></span>
+						</a>
+						<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-closer">
+							<li class="nav-header">
+								<asp:Label runat="server" ID="lblHeader_Company_Count_String"></asp:Label>
+							</li>
+							
+							<li>
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left bolder">Current Company Selected</span><br />
+										<span class="pull-left"><i class="icon-arrow-right"></i> <asp:Label runat="server" ID="lblHeader_Company_Name"></asp:Label>
+                                        <asp:Label runat="server" ID="lblHeader_Company_Code" Visible="False"></asp:Label>
+                                        <asp:Label runat="server" ID="lblHeader_DBName" Visible="False"></asp:Label>
+                                        </span>
+									</div>
+									
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Change Selection
+									<i class="icon-arrow-right"></i>
+								</a>
+							</li>
+							
+							
+							
+						</ul>
+					</li>
+
+
+					<li id="lnk_Notification" runat ="server" class="purple">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bell-alt icon-animated-bell icon-only"></i>
+							<span class="badge badge-important"><asp:Label runat="server" ID="lblHeader_Notification_Count">5</asp:Label></span>
+						</a>
+						<ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-closer">
+							<li class="nav-header">
+								<i class="icon-warning-sign"></i> <asp:Label runat="server" ID="lblHeader_Notification_Count2">5</asp:Label> Notifications
+							</li>
+							
+							<li id="lnk_Notification_TodaysLecture" runat ="server">
+								<a href="TodaysLectureSchedule.aspx">
+									<div class="clearfix">
+										<span class="pull-left"><i class="icon-calendar btn btn-mini btn-success"></i> Todays Lecture</span>
+										<span class="pull-right badge badge-success"><asp:Label runat="server" ID="lblHeader_Notification_TodaysLecture"></asp:Label></span>
+									</div>
+								</a>
+							</li>
+							
+							<li id="lnk_Notification_Attendance" runat ="server">
+								<a href="AttendanceAuthorisation.aspx">
+									<div class="clearfix">
+										<span class="pull-left"><i class="icon-user btn btn-mini btn-primary"></i> Attendance Authorisation</span>
+										<span class="pull-right badge badge-info"><asp:Label runat="server" ID="lblHeader_Notification_Attendance">0</asp:Label></span>
+									</div>
+								</a>
+							</li>
+
+                            <li id="lnk_Notification_Lecture_Cancelled" runat ="server">
+								<a href="LectureSchedule_Notification_Detail.aspx?flag=1">
+									<div class="clearfix">
+										<span class="pull-left"><i class="icon-user btn btn-mini btn-primary"></i> Cancelled Lectures</span>
+										<span class="pull-right badge badge-info"><asp:Label runat="server" ID="lblHeader_Notification_CancelledLecture">0</asp:Label></span>
+									</div>
+								</a>
+							</li>
+
+                             <li id="lnk_Notification_Lecture_Pending_Approval" runat ="server">
+								<a href="LectureSchedule_Notification_Detail.aspx?flag=2">
+									<div class="clearfix">
+										<span class="pull-left"><i class="icon-user btn btn-mini btn-primary"></i> Pending Approval Lectures</span>
+										<span class="pull-right badge badge-info"><asp:Label runat="server" ID="lblHeader_Notification_PendingApprovalLecture"></asp:Label></span>
+									</div>
+								</a>
+							</li>
+
+                             <li id="lnk_Notification_Lecture_Rejected" runat ="server">
+								<a href="LectureSchedule_Notification_Detail.aspx?flag=3">
+									<div class="clearfix">
+										<span class="pull-left"><i class="icon-user btn btn-mini btn-primary"></i> Rejected Lectures</span>
+										<span class="pull-right badge badge-info"><asp:Label runat="server" ID="lblHeader_Notification_RejectedLecture"></asp:Label></span>
+									</div>
+								</a>
+							</li>
+							
+							<%--<li id="lnk_Notification_Answersheet" runat ="server">
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left"><i class="icon-book btn btn-mini btn-warning"></i> Answersheet Dispatch</span>
+										<span class="pull-right badge badge-warning"><asp:Label runat="server" ID="lblHeader_Notification_Answersheet">0</asp:Label></span>
+									</div>
+								</a>
+							</li>--%>
+																
+							<%--<li id="lnk_Notification_Marks" runat ="server">
+								<a href="#">
+									<div class="clearfix">
+										<span class="pull-left"><i class="icon-book btn btn-mini btn-danger"></i> Marks Authorisation</span>
+										<span class="pull-right badge badge-important"><asp:Label runat="server" ID="lblHeader_Notification_Marks">0</asp:Label></span>
+									</div>
+								</a>
+							</li>--%>
+						</ul>
+					</li>
+
+
+					<li id="lnk_Message" runat ="server" class="green">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-envelope-alt icon-animated-vertical icon-only"></i>
+							<span class="badge badge-success">5</span>
+						</a>
+						<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-closer">
+							<li class="nav-header">
+								<i class="icon-envelope"></i> 5 Messages
+							</li>
+							
+							
+							
+							
+							
+							
+							
+															
+	
+						</ul>
+					</li>
+
+
+					<li class="light-blue user-profile">
+						<a class="user-menu dropdown-toggle" href="#" data-toggle="dropdown">
+							<img alt="Jason's Photo" src="assets/avatars/avatar2.png" class="nav-user-photo" />
+							<span id="user_info">
+								<small>Welcome,</small> <asp:Label runat="server" ID="lblHeader_User_Name"></asp:Label>
+                                <asp:Label runat="server" ID="lblHeader_User_Code" Visible="False"></asp:Label>
+							</span>
+							<i class="icon-caret-down"></i>
+						</a>
+						<ul id="user_menu" class="pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+							
+							<li><asp:LinkButton  ID="BtnLogOut" runat="server" OnClick="BtnLogOut_Click" ><i class="icon-off"></i> Log off </asp:LinkButton></li>
+						</ul>
+					</li>
+
+
+
+
+			  </ul>
+
+
+                <!--/.ace-nav-->
+            </div>
+            <!--/.container-fluid-->
+        </div>
+        <!--/.navbar-inner-->
+    </div>
+    <!--/.navbar-->
+    <div class="container-fluid" id="main-container">
+        <a href="#" id="menu-toggler"><span></span></a>
+        <!-- menu toggler -->
+        
+       <div id="sidebar" class="menu-min no-print">
+            <div id="sidebar-shortcuts">
+               <%-- <div id="sidebar-shortcuts-large">
+                    <button id="btnShortCut_TestSchedule" runat="server" class="btn btn-small btn-success radius-4">
+                        <i class="icon-calendar"></i>
+                    </button>
+                    <button id="btnShortCut_TestAttendance" runat="server" class="btn btn-small btn-info radius-4">
+                        <i class="icon-user"></i>
+                    </button>
+                    <button id="btnShortCut_TestAnswerPaper" runat="server" class="btn btn-small btn-warning radius-4">
+                        <i class="icon-book"></i>
+                    </button>
+                    <button id="btnShortCut_TestMarks" runat="server" class="btn btn-small btn-danger radius-4">
+                        <i class="icon-check"></i>
+                    </button>
+                </div>--%>
+               <%-- <div id="sidebar-shortcuts-mini">
+                    <span class="btn btn-success"></span>
+						<span class="btn btn-info"></span>
+						<span class="btn btn-warning"></span>
+						<span class="btn btn-danger"></span>
+                </div>--%>
+            </div>
+            <!-- #sidebar-shortcuts -->
+            
+            <asp:Label ID="lblHeaderMenu" runat="server" Text="" CssClass ="no-print"></asp:Label> <!--/.nav-list-->
+            
+            <%--<ul class="nav nav-list">
+                <li><a href="UserDashboard1.aspx"><span>Dashboard</span> </a></li>
+                <li id="Menu_A_Master" runat="server"><a href="#" class="dropdown-toggle"><span>Master</span>
+                    <b class="arrow icon-angle-down"></b></a>
+                    <ul class="submenu">
+                        <li><a href="ManageBatch.aspx"><i class="icon-double-angle-right"></i>Batches</a></li>
+                        <li><a href="Master_Partner.aspx"><i class="icon-double-angle-right"></i>Faculty</a></li>
+                        <li><a href="Master_Faculty_Subject.aspx"><i class="icon-double-angle-right"></i>Faculty
+                            Subject Link</a></li>
+                        <li><a href="ManageChapterSequence.aspx"><i class="icon-double-angle-right"></i>Chapter
+                            Sequence</a></li>
+                        <li><a href="Master_Scheduling_Horizon.aspx"><i class="icon-double-angle-right"></i>
+                            Scheduling Horizon</a></li>
+                        <li><a href="#"><i class="icon-double-angle-right"></i>RFID Device</a></li>
+                        <li><a href="ManageLectureDuration.aspx"><i class="icon-double-angle-right"></i>Slots</a></li>
+                    </ul>
+                </li>
+
+                <li  runat="server" id="Menu_A_YearDistributionsheet" ><a href="YearDistributionsheet.aspx"><i></i><span>Teaching Details</span>
+                </a></li>
+                <li runat="server" id="Menu_A_PlanforSchedulingHorizon"><a href="PlanforSchedulingHorizon.aspx"><i></i><span>Phase Distribution Sheet</span>
+                </a></li>
+                <li runat="server" id="Menu_A_PlanforSchedulingDates"><a href="PlanforSchedulingDates.aspx"><i></i><span>Date Distribution sheet</span>
+                </a></li>
+                <li runat="server" id="Menu_A_LectureSchedule"><a href="LecturescheduleDecentralized.aspx" runat="server" id="lnkLectureSchedule"><i></i><span>Lecture Schedule</span> </a></li>
+                 
+
+
+
+
+
+                <li id="Menu_A_Approval" runat="server"><a href="#" class="dropdown-toggle"><span>Approval</span>
+                    <b class="arrow icon-angle-down"></b></a>
+                    <ul class="submenu">
+                        <li><a href="ManageLectureAlterationApproval.aspx"><i class="icon-double-angle-right"></i>Lecture Alteration</a></li>
+                        <li><a href="#"><i class="icon-double-angle-right"></i>Lecture Cancellation</a></li>
+                        <li><a href="MonthlyClosingProcedure.aspx"><i class="icon-double-angle-right"></i>Monthly Closing</a></li>
+                        <li><a href="ManualAdjustmentAftermonthlyclosing.aspx"><i class="icon-double-angle-right"></i>Manual Adjustment</a></li>
+                    </ul>
+                </li>
+
+
+                <li id="Menu_U_AssignStudentsToBatches" runat="server"><a href="AssignStudentstoBatches.aspx"><i></i><span>Assign Students To Batches</span>
+                </a></li>
+
+                <li id="Menu_U_ManageTimeTable" runat="server"><a href="DivisionTimetableCreationAssignment.aspx"><i></i><span>Manage Time Table</span>
+                </a></li>
+
+                <li id="Menu_U_ManageAttendance" runat="server" ><a href="ManageStudentAttendance.aspx"><i></i><span>Manage Attendance</span>
+                </a></li>
+
+                <li id="Menu_U_LectureClosure" runat="server"><a href="#"><i></i><span>Lecture Closure</span>
+                </a></li>
+
+
+                 <li id="Menu_U_MonthlyClosing" runat="server"><a href="MonthlyClosingProcedure.aspx"><i></i><span>Monthly Closing</span>
+                </a></li>
+
+                <li id="Menu_U_ManualAdjustment" runat="server"><a href="ManualAdjustmentAftermonthlyclosing.aspx"><i></i><span>Manual Adjustment</span>
+                </a></li>
+
+
+                <li id ="Menu_A_Reports" runat ="server">
+					  <a href="#" class="dropdown-toggle" >
+						
+						<span>Reports</span>
+						<b class="arrow icon-angle-down"></b>
+					  </a>
+					  <ul class="submenu">
+						<li><a href="#"><i class="icon-double-angle-right"></i> Faculty Work Allocation</a></li>
+                        <li><a href="Rpt_Student_Absenteesim_LectureWise.aspx"><i class="icon-double-angle-right"></i> Student Absenteesim Lecture Wise</a></li>
+                        <li><a href="Rpt_Lecture_Schedule_Details.aspx"><i class="icon-double-angle-right"></i>Lecture Schedule Details</a></li>
+                        
+                        </ul>
+                        </li>
+            </ul>--%>
+            <!--/.nav-list-->
+            <div id="sidebar-collapse">
+                <i class="icon-double-angle-left"></i>
+            </div>
+        </div>
+        <!--/#sidebar-->
+        <div id="main-content" class="clearfix">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- #main-content -->
+    </div>
+    <!--/.fluid-container#main-container-->
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+		
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+           if (prm != null) {
+               prm.add_endRequest(function (sender, e) {
+                   if (sender._postBackSettings.panelsToUpdate != null) {
+                       $(".chzn-select").chosen();
+                       $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+                       $(".chzn-select").css("width", "80%");
+                       $('.ace-tooltip').tooltip();
+			           $('.ace-popover').popover();
+
+                       $('[data-rel=tooltip]').tooltip();
+	                   $('[data-rel=popover]').popover({html:true});
+                       $('.id_date_range_picker_1').daterangepicker();
+                       $('.date-picker').datepicker();
+                       $('.timepickernew').timepicker({
+                defaultTime: false,
+				minuteStep: 1,				
+                disableFocus: true,                
+                showMeridian:true ,
+                format: 'HH:ii p'               
+                  
+			});
+                   }
+               });
+           };
+
+		$(function() {
+			$('#id-disable-check').on('click', function() {
+				var inp = $('#form-input-readonly').get(0);
+				if(inp.hasAttribute('disabled')) {
+					inp.setAttribute('readonly' , 'true');
+					inp.removeAttribute('disabled');
+					inp.value="This text field is readonly!";
+				}
+				else {
+					inp.setAttribute('disabled' , 'disabled');
+					inp.removeAttribute('readonly');
+					inp.value="This text field is disabled!";
+				}
+			});
+		
+		
+			$(".chzn-select").chosen(); 
+			$(".chzn-select-deselect").chosen({allow_single_deselect:true}); 
+			
+			$('.ace-tooltip').tooltip();
+			$('.ace-popover').popover();
+			
+			$('textarea[class*=autosize]').autosize({append: "\n"});
+			$('textarea[class*=limited]').each(function() {
+				var limit = parseInt($(this).attr('data-maxlength')) || 100;
+				$(this).inputlimiter({
+					"limit": limit,
+					remText: '%n character%s remaining...',
+					limitText: 'max allowed : %n.'
+				});
+			});
+			
+			$.mask.definitions['~']='[+-]';
+			$('.input-mask-date').mask('99/99/9999');
+			$('.input-mask-phone').mask('(999) 999-9999');
+			$('.input-mask-eyescript').mask('~9.99 ~9.99 999');
+			$(".input-mask-product").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
+			
+			
+			
+			$( "#input-size-slider" ).css('width','200px').slider({
+				value:1,
+				range: "min",
+				min: 1,
+				max: 6,
+				step: 1,
+				slide: function( event, ui ) {
+					var sizing = ['', 'input-mini', 'input-small', 'input-medium', 'input-large', 'input-xlarge', 'input-xxlarge'];
+					var val = parseInt(ui.value);
+					$('#form-field-4').attr('class', sizing[val]).val('.'+sizing[val]);
+				}
+			});
+
+			$( "#input-span-slider" ).slider({
+				value:1,
+				range: "min",
+				min: 1,
+				max: 11,
+				step: 1,
+				slide: function( event, ui ) {
+					var val = parseInt(ui.value);
+					$('#form-field-5').attr('class', 'span'+val).val('.span'+val).next().attr('class', 'span'+(12-val)).val('.span'+(12-val));
+				}
+			});
+			
+			
+			var $tooltip = $("<div class='tooltip right in' style='display:none;'><div class='tooltip-arrow'></div><div class='tooltip-inner'></div></div>").appendTo('body');
+			$( "#slider-range" ).css('height','200px').slider({
+				orientation: "vertical",
+				range: true,
+				min: 0,
+				max: 100,
+				values: [ 17, 67 ],
+				slide: function( event, ui ) {
+					var val = ui.values[$(ui.handle).index()-1]+"";
+					
+					var pos = $(ui.handle).offset();
+					$tooltip.show().children().eq(1).text(val);		
+					$tooltip.css({top:pos.top - 10 , left:pos.left + 18});
+					
+					//$(this).find('a').eq(which).attr('data-original-title' , val).tooltip('show');
+				}
+			});
+			$('#slider-range a').tooltip({placement:'right', trigger:'manual', animation:false}).blur(function(){
+				$tooltip.hide();
+				//$(this).tooltip('hide');
+			});
+			//$('#slider-range a').tooltip({placement:'right', animation:false});
+			
+			$( "#slider-range-max" ).slider({
+				range: "max",
+				min: 1,
+				max: 10,
+				value: 2,
+				//slide: function( event, ui ) {
+				//	$( "#amount" ).val( ui.value );
+				//}
+			});
+			//$( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+			
+			$( "#eq > span" ).css({width:'90%', float:'left', margin:'15px'}).each(function() {
+				// read initial values from markup and remove that
+				var value = parseInt( $( this ).text(), 10 );
+				$( this ).empty().slider({
+					value: value,
+					range: "min",
+					animate: true
+					
+				});
+			});
+
+			
+			$('#id-input-file-1 , #id-input-file-2').ace_file_input({
+				no_file:'No File ...',
+				btn_choose:'Choose',
+				btn_change:'Change',
+				droppable:false,
+				onchange:null,
+				thumbnail:false //| true | large
+				//whitelist:'gif|png|jpg|jpeg'
+				//blacklist:'exe|php'
+				//onchange:''
+				//
+			});
+			
+			$('#id-input-file-3').ace_file_input({
+				style:'well',
+				btn_choose:'Drop files here or click to choose',
+				btn_change:null,
+				no_icon:'icon-cloud-upload',
+				droppable:true,
+				onchange:null,
+				thumbnail:'small',
+				before_change:function(files, dropped) {
+					/**
+					if(files instanceof Array || (!!window.FileList && files instanceof FileList)) {
+						//check each file and see if it is valid, if not return false or make a new array, add the valid files to it and return the array
+						//note: if files have not been dropped, this does not change the internal value of the file input element, as it is set by the browser, and further file uploading and handling should be done via ajax, etc, otherwise all selected files will be sent to server
+						//example:
+						var result = []
+						for(var i = 0; i < files.length; i++) {
+							var file = files[i];
+							if((/^image\//i).test(file.type) && file.size < 102400)
+								result.push(file);
+						}
+						return result;
+					}
+					*/
+					return true;
+				}
+				/*,
+				before_remove : function() {
+					return true;
+				}*/
+
+			}).on('change', function(){
+				//console.log($(this).data('ace_input_files'));
+				//console.log($(this).data('ace_input_method'));
+			});
+
+			
+			$('#spinner1').ace_spinner({value:0,min:0,max:200,step:10, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+			.on('change', function(){
+				//alert(this.value)
+			});
+			$('#spinner2').ace_spinner({value:0,min:0,max:10000,step:100, icon_up:'icon-caret-up', icon_down:'icon-caret-down'});
+			$('#spinner3').ace_spinner({value:0,min:-100,max:100,step:10, icon_up:'icon-plus', icon_down:'icon-minus', btn_up_class:'btn-success' , btn_down_class:'btn-danger'});
+
+			
+			
+			
+			$('.date-picker').datepicker();
+			$('.timepickernew').timepicker({
+                defaultTime: false,
+				minuteStep: 1,				
+                disableFocus: true,                
+                showMeridian:true ,
+                format: 'HH:ii p'               
+                  
+			});
+			
+			$('.id_date_range_picker_1').daterangepicker();
+			
+			$('#colorpicker1').colorpicker();
+			$('#simple-colorpicker-1').ace_colorpicker();
+		
+			$('[data-rel=tooltip]').tooltip();
+	        $('[data-rel=popover]').popover({html:true});
+		    $(".knob").knob();
+	
+
+    		});
+
+		</script>
+
+        <script type="text/javascript" src="assets/js/Table-Managed.js"></script>    
+        <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.dataTables.bootstrap.js"></script>
+
+    </form>
+</body>
+</html>
